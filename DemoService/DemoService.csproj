@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <UserSecretsId>dotnet-DemoService-B15DD79C-2D66-4E38-8420-0E7D17B37C91</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MassTransit.AmazonSQS" Version="7.2.1" />
+        <PackageReference Include="MassTransit.AspNetCore" Version="7.2.1" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    </ItemGroup>
+</Project>
