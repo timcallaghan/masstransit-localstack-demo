@@ -2,6 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoService", "DemoService\DemoService.csproj", "{AD79F300-1C45-4DF5-AF96-CDCB96081F40}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{521CE02D-9BC6-4CA4-9A4B-0A1C93201558}"
+ProjectSection(SolutionItems) = preProject
+	docker-compose.yml = docker-compose.yml
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
