@@ -32,8 +32,16 @@ namespace DemoService
                             {
                                 h.AccessKey(busSettings.AccessKey);
                                 h.SecretKey(busSettings.SecretKey);
-                                h.Config(new AmazonSimpleNotificationServiceConfig { ServiceURL = busSettings.ServiceUrl });
-                                h.Config(new AmazonSQSConfig { ServiceURL = busSettings.ServiceUrl });
+                                h.Config(new AmazonSimpleNotificationServiceConfig
+                                {
+                                    ServiceURL = busSettings.ServiceUrl,
+                                    AuthenticationRegion = busSettings.Region
+                                });
+                                h.Config(new AmazonSQSConfig
+                                {
+                                    ServiceURL = busSettings.ServiceUrl,
+                                    AuthenticationRegion = busSettings.Region
+                                });
                             });
 
                             cfg.Message<DemoMessage>(mtc =>
@@ -49,7 +57,6 @@ namespace DemoService
                             });
                         });
                     });
-                    services.AddMassTransitHostedService(true);
                     services.AddHostedService<Worker>();
                 });
     }

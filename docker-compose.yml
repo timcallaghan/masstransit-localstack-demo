@@ -1,25 +1,12 @@
-version: "3.8"
-
 services:
   localstack:
-    privileged: true
-    restart: always
     container_name: localstack_main
-    image: localstack/localstack:0.11.2
+    image: localstack/localstack:4.3.0
     ports:
-      - 4566:4566
-      - 4571:4571
+      - "4566:4566"
     environment:
+      - DEBUG=${DEBUG:-0}
       - SERVICES=sns,sqs
-      - DEBUG=${DEBUG- }
-      - TEST_AWS_ACCOUNT_ID=000000000000
-      - DATA_DIR=/tmp/localstack/data
-      - DEFAULT_REGION=us-east-1
-      - DOCKER_HOST=unix:///var/run/docker.sock
-      - HOST_TMP_FOLDER=/tmp/localstack
     volumes:
-      - localstack:/tmp/localstack
-      - /var/run/docker.sock:/var/run/docker.sock
-
-volumes:
-  localstack:
+      - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"

@@ -5,6 +5,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionFolder", "{521CE02D-9BC6-4CA4-9A4B-0A1C93201558}"
 ProjectSection(SolutionItems) = preProject
 	docker-compose.yml = docker-compose.yml
+	Directory.Packages.props = Directory.Packages.props
+	README.md = README.md
 EndProjectSection
 EndProject
 Global
